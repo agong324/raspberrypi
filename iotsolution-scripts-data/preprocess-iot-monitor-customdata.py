@@ -188,7 +188,7 @@ latlong=lat:long'
 #                                     SETUP THE TOPIC DATA STREAMS FOR WALMART EXAMPLE
 
 maintopic='iot-mainstream'
-preprocesstopic='MIN,MAX,COUNT,VARIANCE,OUTLIERS,ANOMPROB'
+preprocesstopic='iot-preprocess'
 maintopic,producerid=datasetup(maintopic,preprocesstopic)
 print("Started Preprocessing: ", maintopic,producerid)
 
@@ -202,7 +202,7 @@ async def startviper():
           except Exception as e:
             print("ERROR:",e)
             continue
-   
+preprocesslogic='MIN,MAX,COUNT,VARIANCE,OUTLIERS,ANOMPROB'
 async def spawnvipers():
 
     loop.run_until_complete(startviper())
